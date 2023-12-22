@@ -1,6 +1,9 @@
 import React from 'react';
 import {SafeAreaView, View, Text, StatusBar, Image} from 'react-native';
 import styles from './styles/styles';
+import PaymentCardView from './components/PaymentCard';
+import GoalAttainment from './components/GoalAttainment';
+// import RevenueCompositionCard from './components/RevenueCompositionCard';
 
 function App(): React.JSX.Element {
   return (
@@ -23,6 +26,9 @@ function App(): React.JSX.Element {
             />
           </View>
         </View>
+        <PaymentCardView />
+        <GoalAttainment />
+        {/* <RevenueCompositionCard /> */}
       </SafeAreaView>
     </View>
   );

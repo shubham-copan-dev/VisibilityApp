@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginBottom:28
   },
   homeText: {
     color: '#252B41',
