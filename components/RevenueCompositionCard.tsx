@@ -1,16 +1,15 @@
 import React from 'react';
-import {View, Image, Text} from 'react-native';
-import {StyleSheet} from 'react-native';
+import {View, Image, Text, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   revenueCardContainer: {
     backgroundColor: '#fff',
-    marginTop: 32,
     borderRadius: 18,
     paddingTop: 26,
     paddingBottom: 26,
     paddingLeft: 16,
     paddingRight: 16,
+    marginBottom: 12,
   },
   titleContainer: {
     display: 'flex',
@@ -39,8 +38,6 @@ const styles = StyleSheet.create({
   },
   percentageDetail: {
     color: '#252B41', // Default color if variable is not defined
-    fontVariant: ['lining-nums', 'tabular-nums', 'slashed-zero'],
-    fontFeatureSettings: "'clig' off, 'liga' off",
     fontFamily: 'Poppins',
     fontSize: 12,
     fontStyle: 'normal',
@@ -59,44 +56,44 @@ const styles = StyleSheet.create({
   },
 });
 
-const RevenueCompositionCard = () => {
+const RevenueCompositionCard = ({
+  titleIconSource,
+  titleText,
+  chevronIconSource,
+  totalRevenue,
+  percentageDetail,
+  graphData,
+  donutImageSource,
+}) => {
   return (
-    <>
-      <View style={styles.revenueCardContainer}>
-        <View style={styles.titleContainer}>
-          <View style={styles.titleLabel}>
-            <Image
-              source={require('../assets/images/BoldDuotone.png')}
-              alt="right-icon"
-            />
-            <Text style={styles.label}>$ Renewed</Text>
-          </View>
-          <Image
-            source={require('../assets/images/chevron-right-icon.png')}
-            alt="right-icon"
-          />
+    <View style={styles.revenueCardContainer}>
+      <View style={styles.titleContainer}>
+        <View style={styles.titleLabel}>
+          <Image source={titleIconSource} alt="right-icon" />
+          <Text style={styles.label}>{titleText}</Text>
         </View>
-        <View style={{flexDirection: 'row', alignItems: 'center', gap: 5}}>
-          <Text style={styles.totalRevenueCost}>24M</Text>
-          <Text style={styles.percentageDetail}>(65.5% of total Revenue)</Text>
-        </View>
-        <View style={styles.graphContainer}>
-          <View style={styles.graphStatus}>
-            <View>
-              <Text>Software {'\n'} 16M</Text>
-            </View>
-            <View>
-              <Text>Cross-Sell {'\n'} 8M</Text>
-            </View>
-          </View>
-          <Image
-            source={require('../assets/images/Donut2.png')}
-            alt="right-icon"
-            style={{width: 50, height: 50}}
-          />
-        </View>
+        <Image source={chevronIconSource} alt="right-icon" />
       </View>
-    </>
+      <View style={{flexDirection: 'row', alignItems: 'center', gap: 5}}>
+        <Text style={styles.totalRevenueCost}>{totalRevenue}</Text>
+        <Text style={styles.percentageDetail}>({percentageDetail})</Text>
+      </View>
+      <View style={styles.graphContainer}>
+        <View style={styles.graphStatus}>
+          {graphData.map((data, index) => (
+            <View key={index}>
+              <Text>{data.label}</Text>
+              <Text>{data.value}</Text>
+            </View>
+          ))}
+        </View>
+        <Image
+          source={donutImageSource}
+          alt="right-icon"
+          style={{width: 50, height: 50}}
+        />
+      </View>
+    </View>
   );
 };
 

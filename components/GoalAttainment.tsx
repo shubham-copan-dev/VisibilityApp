@@ -19,8 +19,9 @@ const GoalAttainment = () => {
       </Text>
       <View style={styles.graphicalContainer}>
         <Image
-          source={require('../assets/images/graph.png')}
+          source={require('../assets/images/Donut.png')}
           alt="profile-icon"
+          style={{width: 150, height: 150}}
         />
         <View style={styles.columnListsContainer}>
           <View style={styles.columnList}>
@@ -99,8 +100,6 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: 'bold',
     lineHeight: 30 * 1.3, // Assuming the base font size is 30 and line-height is 130%
-    fontVariant: ['lining-nums', 'tabular-nums', 'slashed-zero'],
-    fontFeatureSettings: "'clig' off, 'liga' off",
   },
   text2Style: {
     color: '#252B41', // Use your Base-Primary color here
@@ -109,8 +108,6 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '400',
     lineHeight: 16 * 1.3, // Assuming the base font size is 16 and line-height is 130%
-    fontVariant: ['lining-nums', 'tabular-nums', 'slashed-zero'],
-    fontFeatureSettings: "'clig' off, 'liga' off",
   },
   text3Style: {
     color: '#4B96C1', // Use your Charts-2 color here
@@ -119,8 +116,6 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: 'bold',
     lineHeight: 30 * 1.3, // Assuming the base font size is 30 and line-height is 130%
-    fontVariant: ['lining-nums', 'tabular-nums', 'slashed-zero'],
-    fontFeatureSettings: "'clig' off, 'liga' off",
   },
   text4Style: {
     color: '#6CC6D4', // Use your Charts-2 color here
@@ -129,8 +124,6 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: 'bold',
     lineHeight: 30 * 1.3, // Assuming the base font size is 30 and line-height is 130%
-    fontVariant: ['lining-nums', 'tabular-nums', 'slashed-zero'],
-    fontFeatureSettings: "'clig' off, 'liga' off",
   },
   graphicalLabels: {
     color: '#666B7A', // Use your Base-Secondary color here
